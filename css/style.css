@@ -49,3 +49,27 @@ header h1{
     font-weight: bold;
     padding-right: 4px;
 }
+
+/* styling for form section */
+
+#form-section{
+    position: fixed;
+    top: 200px;
+    right: 0;
+    min-height: 300px;
+    width: 100vw;
+    background-color: #fff;
+    box-shadow: 0 1px 20px rgba(46, 61, 73, .2);
+}
+
+#form-container{
+    margin: 5px;
+    min-height: 300px;
+    border: solid 1px #02b3e4;
+}
+
+@media only screen and (max-width: 500px){
+    #form-section{
+        top: 150px;
+    }
+}
