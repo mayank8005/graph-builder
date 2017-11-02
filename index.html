@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- adding project stylesheet -->
     <link rel="stylesheet" href="css/style.css">
 
     <!-- adding google font -->
     <link href="https://fonts.googleapis.com/css?family=Slackey" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Forum" rel="stylesheet">
 
     <title>Graph Builder</title>
 </head>
@@ -20,6 +22,37 @@
         <!-- section for all type of forms like type of graph selection , value entry etc -->
         <section id="form-section">
             <div id="form-container">
+
+                <!-- div which contain form for selecting type of chart -->
+                <div id="chart-selector-form">
+
+                    <!-- heading div of form -->
+                    <div class="form-header">
+                        <h2>Select type of chart:</h2>
+                    </div>
+
+                    <!-- chart selector option panel  div -->
+                    <div id="chart-selector-options-pane">
+
+                        <!-- 1st option -->
+                        <div class="chart-option">
+                            <figure class="chart-option-fig">
+                                <img src="images/pie.ico" class="chart-option-img">
+                                <figcaption class="chart-option-name">Pie Chart</figcaption>
+                            </figure>
+                        </div>
+
+                        <!-- 2nd option -->
+                        <div class="chart-option">
+                            <figure class="chart-option-fig">
+                                <img src="images/line.ico" class="chart-option-img">
+                                <figcaption class="chart-option-name">Line Chart</figcaption>
+                            </figure>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- div which contain form for selecting type of chart ENDS-->
 
             </div>
         </section>

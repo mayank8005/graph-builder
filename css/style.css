@@ -26,6 +26,7 @@ header{
     z-index: 8000;
     top:0;
     right: 0;
+    left: 0;
     width: 100vw;
     font-family: 'Slackey', cursive;
     box-shadow: 0 1px 20px rgba(46, 61, 73, .2);
@@ -36,6 +37,12 @@ header{
 
 header h1{
     padding: 10px;
+}
+
+@media only screen and (max-width: 340px){
+    header{
+        font-size: small;
+    }
 }
 
 .green-block{
@@ -56,6 +63,7 @@ header h1{
     position: fixed;
     top: 200px;
     right: 0;
+    left: 0;
     min-height: 300px;
     width: 100vw;
     background-color: #fff;
@@ -66,10 +74,57 @@ header h1{
     margin: 5px;
     min-height: 300px;
     border: solid 1px #02b3e4;
+    padding: 10px;
+}
+
+.form-header{
+    color: #757575;
+    text-align: center;
+    padding: 10px;
+    font-family: 'Forum', cursive;
 }
 
 @media only screen and (max-width: 500px){
     #form-section{
         top: 150px;
+    }
+}
+
+/* styling chart selector form */
+.chart-option{
+    display: inline-block;
+    width: calc(50% - 20px);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.chart-option-img{
+    width: 150px;
+    height: 150px;
+}
+
+#chart-selector-options-pane{
+    margin-top: 16px;
+}
+
+.chart-option-name{
+    font-weight: bold;
+    font-family: 'Forum', cursive;
+}
+
+.chart-option-fig{
+    display: inline-block;
+    padding: 10px;
+}
+
+.chart-option-fig:hover{
+    padding: 5px;
+    border: solid 5px #1E88E5;
+}
+
+@media only screen and (max-width: 400px){
+    .chart-option-img{
+        width: 50px;
+        height: 50px;
     }
 }
