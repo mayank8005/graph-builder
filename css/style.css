@@ -1,0 +1,51 @@
+/* removing unwanted padding and margin */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* main body styling */
+body{
+    background-color: #BBDEFB;
+}
+
+.main-container{
+    background-color: #f7f7f7;
+    height: 100vh;
+    margin-left: 60px;
+    margin-right: 60px;
+    overflow: auto;
+}
+
+/* header style */
+header{
+    background-color: white;
+    position: fixed;
+    text-align: center;
+    z-index: 8000;
+    top:0;
+    right: 0;
+    width: 100vw;
+    font-family: 'Slackey', cursive;
+    box-shadow: 0 1px 20px rgba(46, 61, 73, .2);
+    font-weight: 100;
+    font-size: large;
+    color: #02b3e4;
+    height: 70px;
+}
+
+header h1{
+    padding: 10px;
+}
+
+.green-block{
+    color: #689F38;
+    font-weight: bold;
+    padding-right: 4px;
+}
+
+.red-block{
+    color: #B71C1C;
+    font-weight: bold;
+    padding-right: 4px;
+}
