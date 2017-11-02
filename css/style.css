@@ -20,6 +20,7 @@ body{
 /* header style */
 header{
     background-color: white;
+    color: #424242;
     position: fixed;
     text-align: center;
     z-index: 8000;
@@ -30,7 +31,6 @@ header{
     box-shadow: 0 1px 20px rgba(46, 61, 73, .2);
     font-weight: 100;
     font-size: large;
-    color: #02b3e4;
     height: 70px;
 }
 
