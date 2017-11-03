@@ -84,6 +84,32 @@ header h1{
     font-family: 'Forum', cursive;
 }
 
+.form-sets{
+    border: 0;
+}
+
+.form-options{
+    color: #757575;
+    text-align: center;
+    padding: 10px;
+    font-family: 'Forum', cursive;
+}
+
+.form-entry{
+    display: inline;
+    padding: 5px;
+}
+
+.form-entry input[type="number"]{
+    width: 50px;
+}
+
+@media only screen and (max-width: 450px){
+    .form-options .form-entry{
+        display: block;
+    }
+}
+
 @media only screen and (max-width: 500px){
     #form-section{
         top: 150px;
@@ -91,6 +117,10 @@ header h1{
 }
 
 /* styling chart selector form */
+#chart-selector-form{
+    display: none;
+}
+
 .chart-option{
     display: inline-block;
     width: calc(50% - 20px);
@@ -128,3 +158,4 @@ header h1{
         height: 50px;
     }
 }
+/* pie form styling*/
