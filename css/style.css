@@ -60,7 +60,7 @@ header h1{
 /* styling for form section */
 
 #form-section{
-    position: fixed;
+    position: absolute;
     top: 200px;
     right: 0;
     left: 0;
@@ -116,6 +116,15 @@ header h1{
     }
 }
 
+.form-submit-pane a{
+    color: #02b3e4;
+    font-weight: bold;
+    font-size: 21px;
+    border: solid 1px #02b3e4;
+    border-radius: 25px;
+    padding: 5px;
+}
+
 /* styling chart selector form */
 #chart-selector-form{
     display: none;
@@ -159,3 +168,6 @@ header h1{
     }
 }
 /* pie form styling*/
+#pie-head-img{
+    color: #02b3e4;
+}

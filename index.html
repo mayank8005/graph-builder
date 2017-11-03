@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- awesome fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
     <!-- adding project stylesheet -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -57,32 +61,38 @@
                 <div id="pie-chart-form">
                     <!-- header of form-->
                     <div class="form-header">
-                        <h2>Pie chart form:</h2>
+                        <h2>Pie chart form <i id="pie-head-img" class="fa fa-pie-chart" aria-hidden="true"></i></h2>
                     </div>
                     <div class="form-options">
-                        <label for="no-of-pie-entry">Enter no of entries: </label>
-                        <input type="number" min="1" max="10" value="1" id="no-of-pie-entry"><br><br>
+                        <!-- div for no of entries -->
+                        <label for="no-of-pie-entry">Enter no of entries(1-10): </label>
+                        <input type="number" min="1" max="10" id="no-of-pie-entry"
+                        data-bind="numeric, textInput: pieNoOfOption"><br><br>
 
                         <!-- div to take each entries -->
-                        <div id="pie-entries">
+                        <div id="pie-entries" data-bind="foreach: pieOptions">
                             <fieldset class="form-sets">
                                 <div class="form-entry">
                                     <label for="pie-name">Name: </label>
-                                    <input id="pie-name" type="text" size="12">
+                                    <input id="pie-name" type="text" size="12" data-bind="textInput: label">
                                 </div>
 
                                 <div class="form-entry">
                                     <label for="pie-value">value: </label>
-                                    <input id="pie-value" type="number">
+                                    <input id="pie-value" type="number" data-bind="textInput: value">
                                 </div>
 
                                 <div class="form-entry">
                                     <label for="pie-color">color: </label>
-                                    <input id="pie-color" type="color"><br><br>
+                                    <input id="pie-color" type="color" data-bind="textInput: color"><br><br>
                                 </div>
 
                             </fieldset>
-                            <hr>
+                        </div>
+                        <!-- submit and back button -->
+                        <div class="form-submit-pane">
+                            <a>Draw</a>
+                            <a class="fa fa-arrow-left" ></a>
                         </div>
                     </div>
                 </div>
@@ -91,5 +101,14 @@
             </div>
         </section>
     </div>
+
+    <!-- jquery google cdn -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- loading knockout js lib -->
+    <script src="js/lib/knockout-3.2.0.js"></script>
+
+    <!-- loading our script -->
+    <script src="js/script.js"></script>
 </body>
 </html>
