@@ -39,7 +39,7 @@
                     <div id="chart-selector-options-pane">
 
                         <!-- 1st option -->
-                        <div class="chart-option">
+                        <div class="chart-option" data-bind="click: pieClick">
                             <figure class="chart-option-fig">
                                 <img src="images/pie.ico" class="chart-option-img">
                                 <figcaption class="chart-option-name">Pie Chart</figcaption>
@@ -92,18 +92,31 @@
                         <!-- submit and back button -->
                         <div class="form-submit-pane">
                             <a data-bind="click: pieDraw">Draw</a>
-                            <a class="fa fa-arrow-left" ></a>
+                            <a class="fa fa-arrow-left" data-bind="click: pieFormBack" ></a>
                         </div>
                     </div>
                 </div>
                 <!-- pie form ends -->
-
+                <div id="canvas-division">
+                    <div id="canvas-area">
+                        <canvas height="300" width="200" id="canvas-sheet">
+                        </canvas>
+                    </div>
+                    <div id="canvas-option-pane" class="form-submit-pane">
+                        <a data-bind="click: canvasBack">Back</a>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
 
+    <!-- chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
     <!-- jquery google cdn -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- jquery UI -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 
     <!-- loading knockout js lib -->
     <script src="js/lib/knockout-3.2.0.js"></script>

@@ -16,6 +16,39 @@ $(document).ready(function () {
         // storing this value
         var that = this;
 
+        var selectedChart ;
+
+        // select pie chart from chart selection form
+        this.pieClick = function(){
+
+            //hiding chart selection form
+            $('#chart-selector-form').hide('slide',{direction:'left'},500);
+
+           //setting selected chart to pie
+            selectedChart = 'PIE';
+
+            // showing pie form
+            setTimeout(function () {
+                $('#pie-chart-form').show('slide',{direction:'right'},500);
+            },501);
+
+        };
+
+        //when back is pressed from pie chart form
+        this.pieFormBack = function () {
+
+            // hiding pie form
+            $('#pie-chart-form').hide('slide',{direction:'right'},500);
+
+            //setting selected chart to null
+            selectedChart = null;
+
+            //showing chart selection form
+            setTimeout(function () {
+                $('#chart-selector-form').show('slide',{direction:'left'},500);
+            },501);
+        };
+
         // accounting no of options in pie
         this.pieNoOfOption = ko.observable();
 
@@ -50,23 +83,74 @@ $(document).ready(function () {
             // allowing to draw if no of option greater than 0
             if(that.pieOptions().length > 0)
                allowDraw = true;
-            var drawPieData = [];
+            // creating array for each entry
+            var colors = [];
+            var labels = [];
+            var values = [];
 
             that.pieOptions().forEach(function (option) {
 
+                // checking for errors
+                check(option);
+                // if error occur
                 if(!allowDraw)
                     return;
-                drawPieData.push(koToObject(option));
+
+                // pushing values in respective arrays
+                colors.push(option.color());
+                values.push(Number(option.value()));
+                labels.push(option.label());
             });
 
-            // checking if error occur
-            if(!allowDraw){
+            // if error occur
+            if(!allowDraw)
                 return;
-            }
 
-            console.log(drawPieData);
+            // hiding pie chart form
+            $('#pie-chart-form').hide();
+
+            //showing canvas
+            $('#canvas-division').show();
+
+            // getting canvas context element
+            var canvasContext = $('#canvas-sheet')[0].getContext('2d');
+
+            //creating chart
+            var chart = new Chart(canvasContext, {
+                type: 'pie',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        backgroundColor: colors,
+                        data: values
+                    }]
+                },
+                options :{
+                    responsive: true
+                }
+            });
+            // chart builded
 
         };
+
+        // back button from canvas
+        this.canvasBack = function () {
+            if(selectedChart === 'PIE'){
+
+                //clearing canvas
+                var canvas = $('#canvas-sheet')[0];
+                var context = canvas.getContext("2d");
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                context.beginPath();
+
+                // hiding canvas
+                $('#canvas-division').hide('slide',{direction:'right'},300);
+                // showing pie form
+                setTimeout(function () {
+                    $('#pie-chart-form').show('slide',{direction:'left'},300);
+                },301);
+            }
+        }
 
     };
 
@@ -75,9 +159,9 @@ $(document).ready(function () {
 
 });
 
-function koToObject(KOFunction) {
+function check(KOFunction) {
     var label = KOFunction.label();
-    var value= KOFunction.value();
+    var value= Number(KOFunction.value());
     var color =KOFunction.color();
 
     // in case of error or invalid entry stopping application to draw
@@ -85,13 +169,6 @@ function koToObject(KOFunction) {
         allowDraw = false;
         alert('invalid label or value input');
         return;
-    }
-
-    // returning object
-    return {
-        label: label,
-        value: value,
-        color: color
     }
 
 }

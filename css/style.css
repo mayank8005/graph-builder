@@ -125,11 +125,6 @@ header h1{
     padding: 5px;
 }
 
-/* styling chart selector form */
-#chart-selector-form{
-    display: none;
-}
-
 .chart-option{
     display: inline-block;
     width: calc(50% - 20px);
@@ -170,4 +165,27 @@ header h1{
 /* pie form styling*/
 #pie-head-img{
     color: #02b3e4;
+}
+
+#pie-chart-form{
+    display: none;
+}
+
+/* style sheet of canvas */
+#canvas-division{
+    display: none;
+    text-align: center;
+}
+
+#canvas-area{
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+    height: 300px;
+
+}
+
+#canvas-sheet{
+    margin: auto;
+    display: inline-block;
 }
