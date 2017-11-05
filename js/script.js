@@ -1,5 +1,7 @@
 // if this will be false then application won't load any graph
 var allowDraw = false;
+// variable to store chart
+var chart;
 
 
 function PieOptionTemp() {
@@ -116,7 +118,7 @@ $(document).ready(function () {
             var canvasContext = $('#canvas-sheet')[0].getContext('2d');
 
             //creating chart
-            var chart = new Chart(canvasContext, {
+            chart = new Chart(canvasContext, {
                 type: 'pie',
                 data: {
                     labels: labels,
@@ -138,10 +140,7 @@ $(document).ready(function () {
             if(selectedChart === 'PIE'){
 
                 //clearing canvas
-                var canvas = $('#canvas-sheet')[0];
-                var context = canvas.getContext("2d");
-                context.clearRect(0, 0, canvas.width, canvas.height);
-                context.beginPath();
+                chart.destroy();
 
                 // hiding canvas
                 $('#canvas-division').hide('slide',{direction:'right'},300);
