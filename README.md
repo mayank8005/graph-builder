@@ -11,3 +11,6 @@ Graph builder is a simple web application that builds graph dynamically by accep
 
 # how to used
 Just download project and open index.html with your web browser
+
+### Note
+currently only **pie chart** is functional
