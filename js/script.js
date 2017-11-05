@@ -164,7 +164,7 @@ function check(KOFunction) {
     var color =KOFunction.color();
 
     // in case of error or invalid entry stopping application to draw
-    if(label===''||value<=0){
+    if((label===''||value<=0)&&allowDraw){
         allowDraw = false;
         alert('invalid label or value input');
         return;
