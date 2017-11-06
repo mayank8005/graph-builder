@@ -189,3 +189,20 @@ header h1{
     margin: auto;
     display: inline-block;
 }
+
+/* line form styling*/
+#line-head-img{
+    color: #02b3e4;
+}
+
+#line-chart-form{
+    display: none;
+}
+
+#line-entries fieldset{
+    padding: 10px;
+}
+
+.line-entry{
+    padding: 5px
+}

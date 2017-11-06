@@ -36,6 +36,22 @@ $(document).ready(function () {
 
         };
 
+        // select line chart from chart selection form
+        this.lineClick = function(){
+
+            //hiding chart selection form
+            $('#chart-selector-form').hide('slide',{direction:'left'},500);
+
+            //setting selected chart to pie
+            selectedChart = 'PIE';
+
+            // showing pie form
+            setTimeout(function () {
+                $('#line-chart-form').show('slide',{direction:'right'},500);
+            },501);
+
+        };
+
         //when back is pressed from pie chart form
         this.pieFormBack = function () {
 
