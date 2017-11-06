@@ -106,27 +106,28 @@
                     <div class="form-options">
                         <!-- div for no of entries -->
                         <label for="no-of-line-entry">Enter no of entries(1-10): </label>
-                        <input type="number" min="1" max="10" id="no-of-line-entry"><br><br>
+                        <input type="number" min="1" max="10" id="no-of-line-entry"
+                        data-bind="numeric, textInput: lineNoOfOptions"><br><br>
 
                         <!-- div to take each entries -->
-                        <div id="line-entries">
+                        <div id="line-entries" data-bind="foreach: lineOptions">
                             <fieldset class="form-sets">
                                 <div class="form-entry line-entry">
                                     <label for="line-name">Name: </label>
-                                    <input id="line-name" type="text" size="12">
+                                    <input id="line-name" type="text" size="12" data-bind="textInput: label">
                                 </div>
 
                                 <div class="form-entry line-entry">
                                     <label for="line-value">value: </label>
-                                    <input id="line-value" type="number">
+                                    <input id="line-value" type="number" data-bind="textInput: value">
                                 </div>
 
                             </fieldset>
                         </div>
                         <!-- submit and back button -->
                         <div class="form-submit-pane">
-                            <a>Draw</a>
-                            <a class="fa fa-arrow-left"></a>
+                            <a data-bind="click: lineDraw">Draw</a>
+                            <a class="fa fa-arrow-left" data-bind="click: lineFormBack"></a>
                         </div>
                     </div>
                 </div>
