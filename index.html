@@ -47,7 +47,7 @@
                         </div>
 
                         <!-- 2nd option -->
-                        <div class="chart-option">
+                        <div class="chart-option" data-bind="click: lineClick">
                             <figure class="chart-option-fig">
                                 <img src="images/line.ico" class="chart-option-img">
                                 <figcaption class="chart-option-name">Line Chart</figcaption>
@@ -97,6 +97,41 @@
                     </div>
                 </div>
                 <!-- pie form ends -->
+                <!-- line chart form -->
+                <div id="line-chart-form">
+                    <!-- header of form-->
+                    <div class="form-header">
+                        <h2>line chart form <i id="line-head-img" class="fa fa-line-chart" aria-hidden="true"></i></h2>
+                    </div>
+                    <div class="form-options">
+                        <!-- div for no of entries -->
+                        <label for="no-of-line-entry">Enter no of entries(1-10): </label>
+                        <input type="number" min="1" max="10" id="no-of-line-entry"
+                        data-bind="numeric, textInput: lineNoOfOptions"><br><br>
+
+                        <!-- div to take each entries -->
+                        <div id="line-entries" data-bind="foreach: lineOptions">
+                            <fieldset class="form-sets">
+                                <div class="form-entry line-entry">
+                                    <label for="line-name">Name: </label>
+                                    <input id="line-name" type="text" size="12" data-bind="textInput: label">
+                                </div>
+
+                                <div class="form-entry line-entry">
+                                    <label for="line-value">value: </label>
+                                    <input id="line-value" type="number" data-bind="textInput: value">
+                                </div>
+
+                            </fieldset>
+                        </div>
+                        <!-- submit and back button -->
+                        <div class="form-submit-pane">
+                            <a data-bind="click: lineDraw">Draw</a>
+                            <a class="fa fa-arrow-left" data-bind="click: lineFormBack"></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- line form ends -->
                 <div id="canvas-division">
                     <div id="canvas-area">
                         <canvas height="300" width="200" id="canvas-sheet">

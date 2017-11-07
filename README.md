@@ -1,5 +1,5 @@
 # Graph builder
-Graph builder is a simple web application that builds graph dynamically by accepting values from user.
+Graph builder is a simple web application that builds graph dynamically by accepting values from user. Graph builder is fully responsive and can be used in any devices irrespective of screen size.
 
 # Library's used
 1. [Knockoutjs](http://knockoutjs.com/)
@@ -11,6 +11,3 @@ Graph builder is a simple web application that builds graph dynamically by accep
 
 # how to used
 Just download project and open index.html with your web browser
-
-### Note
-currently only **pie chart** is functional
